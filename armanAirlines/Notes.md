@@ -2,6 +2,7 @@
 1. Response und ErrorResponse DTO
 2. Exception Handling : GeneralExceptionHandler (ControllerAdvice)
 3. Dockerfile?
+4. Adding Documentation for API, OpenAPI
 
 
 # Database Connection
