@@ -1,4 +1,4 @@
-# To Do Liste:
+# To Do List:
 1. Response und ErrorResponse DTO
 2. Exception Handling : GeneralExceptionHandler (ControllerAdvice)
 3. Dockerfile?
