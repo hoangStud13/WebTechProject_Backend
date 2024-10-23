@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>de.htwberlin</groupId>
-	<artifactId>armanAirlines</artifactId>
+	<artifactId>TicketService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>armanAirlines</name>
+	<name>TicketService</name>
 	<description>armanAirlines</description>
 	<url/>
 	<licenses>
