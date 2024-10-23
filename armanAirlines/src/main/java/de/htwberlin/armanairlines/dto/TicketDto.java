@@ -1,5 +1,6 @@
 package de.htwberlin.armanairlines.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,6 +10,10 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data @AllArgsConstructor @NoArgsConstructor
+@Schema(
+        name ="TicketDto",
+        description = "Holds information about the ticket"
+)
 public class TicketDto {
     private Long flightId;
 

@@ -18,7 +18,7 @@ public class TicketMapper {
     }
 
     public static Ticket mapToTicket(TicketDto ticketDto, Ticket ticket) {
-        ticket.setFlightId(ticketDto.getFlightId());
+        ticket.setFlightId(ticketDto.getFlightId()); // remove?
         ticket.setName(ticketDto.getName());
         ticket.setDeparture(ticketDto.getDeparture());
         ticket.setDestination(ticketDto.getDestination());
