@@ -7,6 +7,7 @@ import de.htwberlin.armanairlines.dto.ResponseDto;
 import de.htwberlin.armanairlines.dto.TicketDto;
 import de.htwberlin.armanairlines.entities.Ticket;
 import de.htwberlin.armanairlines.service.ITicketService;
+import de.htwberlin.armanairlines.service.impl.TicketServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -17,6 +18,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/flightRestAPI")
@@ -132,5 +135,23 @@ public class TicketController {
                     .status(HttpStatus.EXPECTATION_FAILED)
                     .body(new ResponseDto(TicketConstants.MESSAGE_417_DELETE,TicketConstants.STATUS_417));
         }
+    }
+
+    @Operation(
+            summary = "Get all Tickets REST API",
+            description = "REST API to get all Tickets"
+    )
+    @ApiResponse(
+            responseCode = "200",
+            description = "HTTP Status successful",
+            content = @Content(mediaType = "application/json")
+    )
+
+    @GetMapping("/tickets")
+    public ResponseEntity <List<TicketDto>> getAllTickets () {
+
+        return  ResponseEntity
+                .status(HttpStatus.OK)
+                .body(ticketService.readAllTickets());
     }
 }

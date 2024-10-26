@@ -4,6 +4,8 @@ package de.htwberlin.armanairlines.service;
 import de.htwberlin.armanairlines.dto.TicketDto;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 
 public interface ITicketService {
 
@@ -18,5 +20,6 @@ public interface ITicketService {
 
     boolean deleteTicket(Long flightId);
 
+    List<TicketDto> readAllTickets();
 
 }
