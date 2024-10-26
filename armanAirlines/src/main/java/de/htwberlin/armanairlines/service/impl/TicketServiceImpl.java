@@ -2,7 +2,7 @@ package de.htwberlin.armanairlines.service.impl;
 
 import de.htwberlin.armanairlines.dto.TicketDto;
 import de.htwberlin.armanairlines.entities.Ticket;
-import de.htwberlin.armanairlines.exception.RessourceNotFoundException;
+import de.htwberlin.armanairlines.exception.ResourceNotFoundException;
 import de.htwberlin.armanairlines.mapper.TicketMapper;
 import de.htwberlin.armanairlines.repository.TicketRepository;
 import de.htwberlin.armanairlines.service.ITicketService;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TicketServiceImpl implements ITicketService {
@@ -32,7 +31,7 @@ public class TicketServiceImpl implements ITicketService {
     @Override
     public TicketDto readTicket(Long flightId) {
         Ticket ticket = ticketRepository.findByFlightId(flightId).orElseThrow(
-                ()->new RessourceNotFoundException("Ticket", "flightId",""+flightId)
+                ()->new ResourceNotFoundException("Ticket", "flightId",""+flightId)
         );
 
         TicketDto ticketDto = TicketMapper.mapToTicketDto(ticket,new TicketDto());
@@ -47,7 +46,7 @@ public class TicketServiceImpl implements ITicketService {
         if(ticketDto != null && ticketDto.getFlightId() != null) {
             // Prüfen, ob Ticket existiert, andernfalls Exception werfen
             Ticket ticket = ticketRepository.findByFlightId(ticketDto.getFlightId()).orElseThrow(
-                    () -> new RessourceNotFoundException("Ticket", "flightId", "" + ticketDto.getFlightId())
+                    () -> new ResourceNotFoundException("Ticket", "flightId", "" + ticketDto.getFlightId())
             );
 
             // Mapping vom TicketDto auf Ticket
@@ -69,7 +68,7 @@ public class TicketServiceImpl implements ITicketService {
     @Override
     public boolean deleteTicket(Long flightId) {
         Ticket ticket = ticketRepository.findByFlightId(flightId).orElseThrow(
-                ()->new RessourceNotFoundException("Ticket", "flightId",""+flightId)
+                ()->new ResourceNotFoundException("Ticket", "flightId",""+flightId)
         );
 
         ticketRepository.delete(ticket);
