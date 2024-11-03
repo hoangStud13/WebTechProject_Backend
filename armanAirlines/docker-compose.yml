@@ -1,0 +1,43 @@
+services:
+  dbservice:
+    image: "randomnoob13/dbservice:v1"
+    container_name: dbservice
+    ports:
+      - "3306:3306"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - armanair
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s    # Wie oft der Healthcheck durchgeführt wird
+      timeout: 10s     # Wie lange gewartet wird, bis der Healthcheck als fehlgeschlagen gilt
+      retries: 3       # Anzahl der Versuche, bevor der Container als ungesund betrachtet wird
+      start_period: 30s # Wartezeit, bevor der erste Healthcheck nach dem Start durchgeführt wird
+    volumes:
+      - db_data:/var/lib/mysql
+
+
+  ticketservice:
+    image: "randomnoob13/ticketservice:v1"
+    container_name: ticketservice
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - armanair
+    depends_on:
+      dbservice:
+        condition: service_healthy
+
+networks:
+  armanair:
+    driver: "bridge"
+
+volumes:
+  db_data:

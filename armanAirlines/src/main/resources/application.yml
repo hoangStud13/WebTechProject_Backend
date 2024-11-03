@@ -1,10 +1,7 @@
 spring:
-  application:
-    name: "armanAirlines"
-  datasource:
-    url: "${JDBC_DB_URL}"
-    username: "${JDBC_DB_USER}"
-    password: "${JDBC_DB_PASSWORD}"
   config:
     import:
       - "application_prod.yml"
+      - "application_test.yml"
+  profiles:
+    active: "test"

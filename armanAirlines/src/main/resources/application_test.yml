@@ -1,0 +1,10 @@
+ spring:
+    application:
+      name: "armanAirlines"
+    config:
+      activate:
+        on-profile: "test"
+    datasource:
+      url: "jdbc:mysql://localhost:3306/webtechproject"
+      username: "TestUser"
+      password: "TestPasswort"

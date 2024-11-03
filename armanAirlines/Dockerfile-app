@@ -1,0 +1,7 @@
+FROM openjdk:20-slim
+
+# Add the application's jar to the image
+COPY armanAirlines/target/ /app/
+
+# execute the application
+ENTRYPOINT ["java", "-jar", "/app/TicketService-0.0.1-SNAPSHOT.jar"]
