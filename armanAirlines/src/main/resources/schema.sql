@@ -1,9 +1,9 @@
 
-DROP DATABASE IF EXISTS WebTechProject;
-CREATE DATABASE WebTechProject;
-USE WebTechProject;
+DROP DATABASE IF EXISTS webtechproject;
+CREATE DATABASE webtechproject;
+USE webtechproject;
 
-CREATE TABLE Ticket (
+CREATE TABLE ticket (
                         flight_Id int PRIMARY KEY AUTO_INCREMENT,
                         name VARCHAR(255),
                         departure VARCHAR(255),

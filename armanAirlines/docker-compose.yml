@@ -21,7 +21,7 @@ services:
 
 
   ticketservice:
-    image: "randomnoob13/ticketservice:v1"
+    image: "randomnoob13/ticketservice:v2"
     container_name: ticketservice
     ports:
       - "8080:8080"
