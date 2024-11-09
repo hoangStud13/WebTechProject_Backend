@@ -9,7 +9,7 @@ services:
         limits:
           memory: 700m
     networks:
-      - armanair
+      - "armanair"
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 30s    # Wie oft der Healthcheck durchgeführt wird
@@ -21,7 +21,7 @@ services:
 
 
   ticketservice:
-    image: "randomnoob13/ticketservice:v2"
+    image: "randomnoob13/ticketservice:v1"
     container_name: ticketservice
     ports:
       - "8080:8080"
@@ -30,13 +30,17 @@ services:
         limits:
           memory: 700m
     networks:
-      - armanair
+      - "armanair"
     depends_on:
       dbservice:
         condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:mysql://dbservice:3306/webtechproject"
+      SPRING_DATASOURCE_USERNAME: "root"
+      SPRING_DATASOURCE_PASSWORD: "RootTestPassword"
 
 networks:
-  armanair:
+  "armanair":
     driver: "bridge"
 
 volumes:
