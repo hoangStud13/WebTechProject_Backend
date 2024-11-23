@@ -1,0 +1,11 @@
+
+
+spring:
+  application:
+    name: "FlightsService"
+
+  datasource:
+    url: "jdbc:mysql://localhost:3307/webtech_flights_backend"
+    username: "root"
+    password: "RootTestPassword"
+
