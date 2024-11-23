@@ -5,10 +5,10 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "iso_country")
+@Table(name = "isocountry_mapping")
 public class IsoCountry {
 
-    @Column(name = "name"  ,nullable = false, unique = true)
+    @Column(name = "name" )
     private String name;
 
 

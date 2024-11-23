@@ -5,7 +5,9 @@ spring:
     name: "FlightsService"
 
   datasource:
-    url: "jdbc:mysql://localhost:3307/webtech_flights_backend"
+    url: "jdbc:mysql://localhost:3307/webtech_fligths_backend"
     username: "root"
     password: "RootTestPassword"
 
+server:
+  port: 8081

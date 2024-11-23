@@ -2,6 +2,7 @@ package de.htwberlin.flightsservice.service.impl;
 
 import de.htwberlin.flightsservice.dto.AirportsDto;
 import de.htwberlin.flightsservice.entities.Airports;
+import de.htwberlin.flightsservice.entities.IsoCountry;
 import de.htwberlin.flightsservice.exception.ResourceNotFoundException;
 import de.htwberlin.flightsservice.mapper.AirportsMapper;
 import de.htwberlin.flightsservice.repository.AirportsRepository;
@@ -46,7 +47,7 @@ public class AirportsServiceImpl implements IAirportsService {
         for (Airports airportsTemp : airports
              ) {
             AirportsDto airportsTempDto = AirportsMapper.mapToFlightsDto(airportsTemp, new AirportsDto());
-            airportsTempDto.setCountry(airportsTempDto.getIsoCountry());
+            airportsTempDto.setCountry(mapCountry(airportsTempDto.getIsoCountry()));
             airportsDtos.add(airportsTempDto);
         }
 
@@ -61,7 +62,7 @@ public class AirportsServiceImpl implements IAirportsService {
         for (Airports airportsTemp : airports
         ) {
             AirportsDto airportsTempDto = AirportsMapper.mapToFlightsDto(airportsTemp, new AirportsDto());
-            airportsTempDto.setCountry(airportsTempDto.getIsoCountry());
+            airportsTempDto.setCountry(mapCountry(airportsTempDto.getIsoCountry()));
             airportsDtos.add(airportsTempDto);
         }
         return airportsDtos;
@@ -69,9 +70,11 @@ public class AirportsServiceImpl implements IAirportsService {
 
     @Override
     public String mapCountry(String countryCode) {
-        String country = String.valueOf(isoCountryRepository.findById(countryCode).orElseThrow(
+        IsoCountry isoCountry = isoCountryRepository.findById(countryCode).orElseThrow(
                 () -> new ResourceNotFoundException("Country", "countryCode", "" + countryCode)
-        ));
+        );
+
+        String country = isoCountry.getName();
         return country;
     }
 }
