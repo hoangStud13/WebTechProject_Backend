@@ -1,7 +1,7 @@
 services:
-  dbservice:
+  dbticketservice:
     image: "randomnoob13/dbservice:v1"
-    container_name: dbservice
+    container_name: dbticketservice
     ports:
       - "3306:3306"
     deploy:
@@ -12,13 +12,12 @@ services:
       - "armanair"
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 30s    # Wie oft der Healthcheck durchgeführt wird
-      timeout: 10s     # Wie lange gewartet wird, bis der Healthcheck als fehlgeschlagen gilt
-      retries: 3       # Anzahl der Versuche, bevor der Container als ungesund betrachtet wird
-      start_period: 30s # Wartezeit, bevor der erste Healthcheck nach dem Start durchgeführt wird
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
     volumes:
-      - db_data:/var/lib/mysql
-
+      - db_ticket_data:/var/lib/mysql
 
   ticketservice:
     image: "randomnoob13/ticketservice:v1"
@@ -32,16 +31,37 @@ services:
     networks:
       - "armanair"
     depends_on:
-      dbservice:
+      dbticketservice:        # Dies sollte dbticketservice sein, nicht dbservice
         condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL: "jdbc:mysql://dbservice:3306/webtechproject"
+      SPRING_DATASOURCE_URL: "jdbc:mysql://dbticketservice:3306/webtechproject"  # Auch hier den Namen anpassen
       SPRING_DATASOURCE_USERNAME: "root"
       SPRING_DATASOURCE_PASSWORD: "RootTestPassword"
+
+  dbflightsservice:
+    image: "randomnoob13/dbflightsservice:v1"
+    container_name: dbflightsservice
+    ports:
+      - "3307:3306"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - "armanair"
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    volumes:
+      - db_flights_data:/var/lib/mysql
 
 networks:
   "armanair":
     driver: "bridge"
 
 volumes:
-  db_data:
+  db_ticket_data:    # Separates Volume für Ticket-Datenbank
+  db_flights_data:   # Separates Volume für Flights-Datenbank

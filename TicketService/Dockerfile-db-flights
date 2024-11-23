@@ -1,0 +1,16 @@
+# Basis-Image für MySQL
+FROM mysql:latest
+
+# Setzen Sie hier Ihre gewünschten Umgebungsvariablen
+ENV MYSQL_ROOT_PASSWORD=RootTestPassword
+ENV MYSQL_DATABASE=webtech_flights_backend
+
+# Arbeitsverzeichnis im Container
+WORKDIR /docker-entrypoint-initdb.d
+
+# Kopieren Sie Ihr Backup in den Container
+# Der Dump muss im gleichen Verzeichnis wie das Dockerfile liegen
+COPY flights_backup.sql .
+
+# Alle .sql Dateien in /docker-entrypoint-initdb.d werden beim Start automatisch ausgeführt
+# Das ist ein Feature der offiziellen MySQL Docker Images
