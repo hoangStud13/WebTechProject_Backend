@@ -1,0 +1,40 @@
+package com.htwberlin.popularflightservice.entities;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.Size;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "PopularFlightService")
+@Data @AllArgsConstructor @NoArgsConstructor
+
+public class PopularFlightService {
+
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+
+@Size (max = 3,  min= 3)
+@Column(name= "iataCode")
+private String iataCode;
+
+@Column (name = "popularFlightServiceId")
+private Long popularFlightServiceId;
+
+@Column(name = "country")
+private String country;
+
+@Column(name = "city")
+private String city;
+
+@Column(name = "departure")
+private String departure;
+
+@Column(name = "destination")
+private String destination;
+}
