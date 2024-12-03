@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/flightRestAPI")
+@RequestMapping("/api/flightRestAPI")
 @Tag(
         name = "CRUD Ticket Rest API",
         description = "CRUD REST API's for our Webapplication to CREATE, UPDATE, FETCH AND DELETE Ticket Details"
