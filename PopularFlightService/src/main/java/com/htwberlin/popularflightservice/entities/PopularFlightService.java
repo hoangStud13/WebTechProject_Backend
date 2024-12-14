@@ -19,11 +19,10 @@ public class PopularFlightService {
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 
 
-@Size (max = 3,  min= 3)
 @Column(name= "iataCode")
-private String iataCode;
+private Long iataCode;
 
-@Column (name = "popularFlightServiceId")
+@Column (name = "popularFlightService_Id")
 private Long popularFlightServiceId;
 
 @Column(name = "country")

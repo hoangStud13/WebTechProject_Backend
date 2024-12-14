@@ -1,28 +1,40 @@
 package com.htwberlin.popularflightservice.controller;
 
 import com.htwberlin.popularflightservice.constants.PopularFlightServiceConstants;
+import com.htwberlin.popularflightservice.dto.ErrorResponseDto;
 import com.htwberlin.popularflightservice.dto.PopularFlightServiceDto;
 import com.htwberlin.popularflightservice.dto.ResponseDto;
 import com.htwberlin.popularflightservice.entities.PopularFlightService;
+import com.htwberlin.popularflightservice.service.IPopularFlightService;
+import com.htwberlin.popularflightservice.service.impl.PopularFlightServiceImpl;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/popularFlightServiceAPI")
-/*@Tag(
+@Tag(
         name = "CRUD PopularFlightService Rest API",
         description = "CRUD REST API's for our Webapplication to CREATE, UPDATE, FETCH AND DELETE PopularFlightService Details"
-)*/
+)
 
 public class PopularFlightServiceController {
 
 
-    private PopularFlightService popularFlightService;
+    private IPopularFlightService popularFlightService;
+
     @Autowired
-    public PopularFlightServiceController(PopularFlightService popularFlightService) {this.popularFlightService = popularFlightService;}
+    public PopularFlightServiceController(IPopularFlightService popularFlightService) {this.popularFlightService = popularFlightService;}
 
 
     @Operation(
@@ -35,6 +47,7 @@ public class PopularFlightServiceController {
             content = @Content(mediaType = "application/json")
     )
 
+    @GetMapping("/popularFlightService/{popularFlightServiceId}")
     public ResponseEntity<PopularFlightServiceDto>getPopularFlightService(@PathVariable Long popularFlightServiceId){
 
         PopularFlightServiceDto popularFlightServiceDto = popularFlightService.readPopularFlightService(popularFlightServiceId);
@@ -146,11 +159,11 @@ public class PopularFlightServiceController {
     )
 
     @GetMapping("/popularFlightService")
-    public ResponseEntity<PopularFlightServiceDto>getAllPopularFlightService(){
+    public ResponseEntity<List<PopularFlightServiceDto>>getAllPopularFlightService(){
 
         return  ResponseEntity
                 .status(HttpStatus.OK)
-                .body(popularFlightService.readAllPopularFlightService());
+                .body(popularFlightService.readAllPopularFlightServices());
     }
     }
 
