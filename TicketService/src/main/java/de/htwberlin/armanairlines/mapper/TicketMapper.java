@@ -8,7 +8,7 @@ public class TicketMapper {
     public static TicketDto mapToTicketDto(Ticket ticket, TicketDto ticketDto) {
         ticketDto.setFlightId(ticket.getFlightId());
         ticketDto.setName(ticket.getName());
-        ticketDto.setDeparture(ticketDto.getDeparture());
+        ticketDto.setDeparture(ticket.getDeparture());
         ticketDto.setDestination(ticket.getDestination());
         ticketDto.setGate(ticket.getGate());
         ticketDto.setDate(ticket.getDate());

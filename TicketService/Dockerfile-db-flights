@@ -9,7 +9,7 @@ ENV MYSQL_DATABASE=webtech_flights_backend
 WORKDIR /docker-entrypoint-initdb.d
 
 # Kopieren Sie Ihr Backup in den Container
-# Der Dump muss im gleichen Verzeichnis wie das Dockerfile liegen
+# Der Dump muss im gleichen Verzeichnis wie das Dockerfile-popular-flights liegen
 COPY flights_backup.sql .
 
 # Alle .sql Dateien in /docker-entrypoint-initdb.d werden beim Start automatisch ausgeführt
