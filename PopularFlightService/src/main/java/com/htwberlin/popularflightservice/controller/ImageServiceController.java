@@ -1,19 +1,23 @@
 package com.htwberlin.popularflightservice.controller;
 
+import com.htwberlin.popularflightservice.constants.ImageServiceConstants;
 import com.htwberlin.popularflightservice.constants.PopularFlightServiceConstants;
 import com.htwberlin.popularflightservice.dto.ErrorResponseDto;
 import com.htwberlin.popularflightservice.dto.PopularFlightServiceDto;
 import com.htwberlin.popularflightservice.dto.ResponseDto;
-import com.htwberlin.popularflightservice.entities.PopularFlightService;
-import com.htwberlin.popularflightservice.service.IPopularFlightService;
-import com.htwberlin.popularflightservice.service.impl.PopularFlightServiceImpl;
+import com.htwberlin.popularflightservice.entities.Image;
+import com.htwberlin.popularflightservice.repository.ImageRepository;
+import com.htwberlin.popularflightservice.service.ImageService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,24 +26,24 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/popularFlightServiceAPI")
+@RequestMapping("/imageServiceAPI")
 @Tag(
-        name = "CRUD PopularFlightService Rest API",
-        description = "CRUD REST API's for our Webapplication to CREATE, UPDATE, FETCH AND DELETE PopularFlightService Details"
+        name = "CRUD imageService Rest API",
+        description = "CRUD REST API's for our Webapplication to CREATE, UPDATE, FETCH AND DELETE ImageService Details"
 )
 
-public class PopularFlightServiceController {
+public class ImageServiceController {
 
-
-    private IPopularFlightService popularFlightService;
+    private ImageService imageService;
 
     @Autowired
-    public PopularFlightServiceController(IPopularFlightService popularFlightService) {this.popularFlightService = popularFlightService;}
-
+    public ImageServiceController(ImageService imageService) {
+        this.imageService = imageService;
+    }
 
     @Operation(
-            summary = "Fetch PopularFlightService REST API",
-            description = "REST API to fetch a PopularFlightService based on PopularFlightService ID"
+            summary = "Fetch ImageService REST API",
+            description = "REST API to fetch a ImageService based on ImageService ID"
     )
     @ApiResponse(
             responseCode = "200",
@@ -47,18 +51,18 @@ public class PopularFlightServiceController {
             content = @Content(mediaType = "application/json")
     )
 
-    @GetMapping("/popularFlightService/{popularFlightServiceId}")
-    public ResponseEntity<PopularFlightServiceDto>getPopularFlightService(@PathVariable Long popularFlightServiceId){
+    @GetMapping("/imageService/{imageServiceId}")
+    public ResponseEntity<Image> getImageService(@PathVariable Long imageServiceId) {
 
-        PopularFlightServiceDto popularFlightServiceDto = popularFlightService.readPopularFlightService(popularFlightServiceId);
+        Image image = imageService.readImageService(imageServiceId);
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(popularFlightServiceDto);
+                .body(image);
     }
 
     @Operation(
-            summary = "Create PopularFlightService REST API",
-            description = "REST API to create a new PopularFlightService"
+            summary = "Create ImageService REST API",
+            description = "REST API to create a new ImageService"
     )
     @ApiResponse(
             responseCode = "201",
@@ -66,17 +70,16 @@ public class PopularFlightServiceController {
             content = @Content(mediaType = "application/json")
     )
 
-    @PostMapping("/popularFlightService")
-    public ResponseEntity<ResponseDto>addPopularFlightService(@RequestBody PopularFlightServiceDto popularFlightServiceDto){
-        popularFlightService.createPopularFlightService(popularFlightServiceDto);
+    @PostMapping("/imageService")
+    public ResponseEntity<ResponseDto> addImageService(@RequestBody Image image) {
+        imageService.createImageService(image);
         return ResponseEntity
                 .status(HttpStatus.CREATED)
-                .body(new ResponseDto(PopularFlightServiceConstants.MESSAGE_201,PopularFlightServiceConstants.STATUS_201));
+                .body(new ResponseDto(ImageServiceConstants.MESSAGE_201, ImageServiceConstants.STATUS_201));
     }
 
-
     @Operation(
-            summary = "Update PopularFlightsService REST API",
+            summary = "Update ImageService REST API",
             description = "REST API to update an existing Ticket"
     )
     @ApiResponses({
@@ -95,25 +98,24 @@ public class PopularFlightServiceController {
             )
     })
 
-    @PutMapping("/popularFlightService")
-    public ResponseEntity<ResponseDto>updatePopularFlightService(@RequestBody PopularFlightServiceDto popularFlightServiceDto){
+    @PutMapping("/imageService")
+    public ResponseEntity<ResponseDto> updateImageService(@RequestBody Image image) {
 
 
-        boolean isUpdated = popularFlightService.updatePopularFlightService(popularFlightServiceDto);
-        if(isUpdated){
+        boolean isUpdated = imageService.updateImageService(image);
+        if (isUpdated) {
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .body(new ResponseDto(PopularFlightServiceConstants.MESSAGE_200, PopularFlightServiceConstants.STATUS_200));
-        }else{
+                    .body(new ResponseDto(ImageServiceConstants.MESSAGE_200, ImageServiceConstants.STATUS_200));
+        } else {
             return ResponseEntity
                     .status(HttpStatus.EXPECTATION_FAILED)
-                    .body(new ResponseDto(PopularFlightServiceConstants.MESSAGE_417_UPDATE,PopularFlightServiceConstants.STATUS_417));
+                    .body(new ResponseDto(ImageServiceConstants.MESSAGE_417_UPDATE, ImageServiceConstants.STATUS_417));
         }
     }
 
-
     @Operation(
-            summary = "Delete PopularFlightService REST API",
+            summary = "Delete ImageService REST API",
             description = "REST API to delete a Ticket by Flight ID"
     )
     @ApiResponses({
@@ -132,24 +134,24 @@ public class PopularFlightServiceController {
             )
     })
 
-    @DeleteMapping("/popularFlightService/{popularFlightServiceId}")
-    public ResponseEntity<ResponseDto>deletePopularFlightService(@PathVariable Long popularFlightServiceId){
+    @DeleteMapping("/imageService/{imageServiceId}")
+    public ResponseEntity<ResponseDto> deleteImageService(@PathVariable Long imageServiceId) {
 
-        boolean isDeleted = popularFlightService.deletePopularFlightService(popularFlightServiceId);
-        if(isDeleted){
+        boolean isDeleted = imageService.deleteImageService(imageServiceId);
+        if (isDeleted) {
             return ResponseEntity
                     .status(HttpStatus.OK)
-                    .body(new ResponseDto(PopularFlightServiceConstants.MESSAGE_200,PopularFlightServiceConstants.STATUS_200));
-        }else{
-            return  ResponseEntity
+                    .body(new ResponseDto(ImageServiceConstants.MESSAGE_200, ImageServiceConstants.STATUS_200));
+        } else {
+            return ResponseEntity
                     .status(HttpStatus.EXPECTATION_FAILED)
-                    .body(new ResponseDto(PopularFlightServiceConstants.MESSAGE_417_DELETE,PopularFlightServiceConstants.STATUS_417));
+                    .body(new ResponseDto(ImageServiceConstants.MESSAGE_417_DELETE, ImageServiceConstants.STATUS_417));
         }
 
-    }
 
+    }
     @Operation(
-            summary = "Get all popularFlightServices REST API",
+            summary = "Get all Images REST API",
             description = "REST API to get all Tickets"
     )
     @ApiResponse(
@@ -158,15 +160,12 @@ public class PopularFlightServiceController {
             content = @Content(mediaType = "application/json")
     )
 
-    @GetMapping("/popularFlightService")
-    public ResponseEntity<List<PopularFlightServiceDto>>getAllPopularFlightService(){
+    @GetMapping("/imageService")
+    public ResponseEntity<List<Image>>getAllImageService(){
 
         return  ResponseEntity
                 .status(HttpStatus.OK)
-                .body(popularFlightService.readAllPopularFlightServices());
+                .body(imageService.readAllImageServices());
     }
-    }
 
-
-
-
+}
