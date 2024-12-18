@@ -6,24 +6,24 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table (name = "ImageService")
-@Data @AllArgsConstructor @NoArgsConstructor
-
+@Table(name = "ImageService")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Image {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name= "imageService_Id")
+    @Column(name = "imageService_Id") //hoang will das als iata code, slavery
     private long imageServiceId;
 
-    @Column(name= "imageTitle")
+    @Column(name = "imageTitle")
     private String imageTitle;
 
-    @Column(name= "description")
+    @Column(name = "description")
     private String description;
 
-    @Column(name= "imageUrl")
+    @Column(name = "imageUrl")
     private String imageUrl;
-
-
 }
+
