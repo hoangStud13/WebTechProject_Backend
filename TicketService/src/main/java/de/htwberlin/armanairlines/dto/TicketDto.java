@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 )
 public class TicketDto {
     private Long flightId;
-
+    private Long userId;
 
     private String name;
 

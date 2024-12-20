@@ -1,9 +1,0 @@
-FROM mysql:latest
-
-# Setzt Umgebungsvariablen für die DB
-ENV MYSQL_ROOT_PASSWORD=RootTestPassword
-ENV MYSQL_DATABASE=webtechproject
-
-# Kopiert die schema.sql Datei in das Docker Verzeichnis und führt Schema.sql aus
-COPY */schema.sql /docker-entrypoint-initdb.d/
-

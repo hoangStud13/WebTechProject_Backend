@@ -18,6 +18,9 @@ public class Ticket {
     @Column(name = "flight_Id")
     private Long flightId;
 
+    @Column(name = "userId")
+    private Long userId;
+
     @Column(name = "name")
     private String name;
 

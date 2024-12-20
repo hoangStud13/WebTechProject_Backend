@@ -1,13 +1,12 @@
 
-
 spring:
   application:
     name: "FlightsService"
 
   datasource:
-    url: "jdbc:mysql://localhost:3307/webtech_fligths_backend"
-    username: "root"
-    password: "RootTestPassword"
+    url: "${SPRING_DATASOURCE_URL}"
+    username: "${SPRING_DATASOURCE_USERNAME}"
+    password: "${SPRING_DATASOURCE_PASSWORD}"
 
-server:
-  port: 8081
+  config:
+    import: "optional:file:.env[.yml]"

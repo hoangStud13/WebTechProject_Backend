@@ -4,10 +4,12 @@
     config:
       activate:
         on-profile: "test"
+      import: "optional:file:.env[.yml]"
+
     datasource:
-      url: "jdbc:mysql://localhost:3306/webtechproject"
-      username: "root"
-      password: "RootTestPassword"
-    sql:
-      init:
-        mode: always
+      url: "${SPRING_DATASOURCE_URL}"
+      username: "${SPRING_DATASOURCE_USERNAME}"
+      password: "${SPRING_DATASOURCE_PASSWORD}"
+
+
+

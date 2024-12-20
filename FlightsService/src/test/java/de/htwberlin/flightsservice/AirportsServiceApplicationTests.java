@@ -2,12 +2,9 @@ package de.htwberlin.flightsservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-class AirportsServiceApplicationTests {
-
+@SpringBootTest(classes = FlightsServiceApplication.class)
+public class AirportsServiceApplicationTests {
 	@Test
-	void contextLoads() {
+	public void contextLoads() {
 	}
-
 }

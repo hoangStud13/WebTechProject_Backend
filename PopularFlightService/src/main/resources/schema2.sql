@@ -1,9 +1,3 @@
-CREATE TABLE ImageService (
-                              imageService_Id BIGINT AUTO_INCREMENT PRIMARY KEY,
-                              imageTitle VARCHAR(255) NOT NULL,
-                              description TEXT,
-                              imageUrl VARCHAR(255) NOT NULL
-);
 
 
 
