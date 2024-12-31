@@ -18,6 +18,11 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
+/**
+ * JWT Authentication Filter for validating JWT tokens on incoming requests.
+ * This filter checks if the request contains a valid JWT token, extracts the user details,
+ * and sets the authentication in the security context if the token is valid.
+ */
 @Component
 public class JWTAuthFilter extends OncePerRequestFilter {
 
@@ -32,6 +37,17 @@ public class JWTAuthFilter extends OncePerRequestFilter {
         this.userDetailsService = userDetailsService;
     }
 
+    /**
+     * The main filter method that is invoked for each HTTP request.
+     * It checks if the request contains a valid JWT token, and if so, sets the authentication
+     * in the Spring Security context.
+     *
+     * @param request The HTTP request to be processed.
+     * @param response The HTTP response to be returned.
+     * @param filterChain The filter chain to pass the request through if no token is found or if it's invalid.
+     * @throws ServletException If an error occurs during the processing of the request.
+     * @throws IOException If an error occurs during input or output operations.
+     */
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         final String authHeader = request.getHeader("Authorization");

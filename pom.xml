@@ -40,8 +40,7 @@
    <modules>
        <module>PopularFlightService</module>
        <module>FlightsService</module>
-       <module>AccountService</module>
-       <module>TicketService</module>
+       <module>UserManagementService</module>
    </modules>
 
 </project>

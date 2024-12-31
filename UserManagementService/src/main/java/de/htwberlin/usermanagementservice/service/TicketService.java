@@ -1,60 +1,42 @@
 package de.htwberlin.usermanagementservice.service;
 
 import de.htwberlin.usermanagementservice.entity.Ticket;
-import de.htwberlin.usermanagementservice.entity.User;
-import de.htwberlin.usermanagementservice.repository.TicketRepository;
-import de.htwberlin.usermanagementservice.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+/**
+ * Service interface for managing tickets in the user management system.
+ * Provides methods for retrieving, creating, and deleting tickets for users.
+ */
+public interface TicketService {
 
-@Service
-public class TicketService {
+    /**
+     * Retrieves all tickets associated with a user based on their email.
+     *
+     * @param email The email address of the user whose tickets are to be fetched.
+     * @return A list of {@link Ticket} objects associated with the user.
+     */
+    List<Ticket> getAllTicketsByUser(String email);
 
-    private final TicketRepository ticketRepository;
-    private final UserRepository userRepository;
+    /**
+     * Retrieves a specific ticket by its ID.
+     *
+     * @param ticketId The ID of the ticket to be retrieved.
+     * @return A {@link Ticket} object corresponding to the specified ticket ID.
+     */
+    Ticket getTicketById(Integer ticketId);
 
-    @Autowired
-    public TicketService(TicketRepository ticketRepository, UserRepository userRepository) {
-        this.ticketRepository = ticketRepository;
-        this.userRepository = userRepository;
-    }
+    /**
+     * Creates a list of new tickets for a user identified by their email.
+     *
+     * @param tickets A list of {@link Ticket} objects to be created.
+     * @param email The email address of the user to associate the tickets with.
+     * @return A list of created {@link Ticket} objects.
+     */
+    List<Ticket> createTickets(List<Ticket> tickets, String email);
 
-    // Alle Tickets eines bestimmten Benutzers zurückgeben
-    public List<Ticket> getAllTicketsByUser(String email) {
-        Optional<User> user = userRepository.findByEmail(email);
-        if (user.isPresent()) {
-            return ticketRepository.findAllByUserId(user.get().getId());
-        } else {
-            throw new RuntimeException("User not found");
-        }
-    }
-
-    // Ticket nach ID suchen
-    public Ticket getTicketById(Integer ticketId) {
-        return ticketRepository.findById(ticketId)
-                .orElseThrow(() -> new RuntimeException("Ticket not found with ID: " + ticketId));
-    }
-
-    // Liste von Tickets erstellen
-    public List<Ticket> createTickets(List<Ticket> tickets, String email) {
-        Optional<User> user = userRepository.findByEmail(email);
-        if (user.isPresent()) {
-            // Alle Tickets mit der UserId des gefundenen Benutzers versehen
-            for (Ticket ticket : tickets) {
-                ticket.setUserId(user.get().getId()); // Setzt den User für jedes Ticket
-            }
-            // Speichert alle Tickets in der Datenbank
-            return ticketRepository.saveAll(tickets);
-        } else {
-            throw new RuntimeException("User not found");
-        }
-    }
-
-    // Ticket löschen
-    public void deleteTicket(Integer ticketId) {
-        ticketRepository.deleteById(ticketId);
-    }
+    /**
+     * Deletes a ticket based on its ID.
+     * @param ticketId The ID of the ticket to be deleted.
+     */
+    void deleteTicket(Integer ticketId);
 }
