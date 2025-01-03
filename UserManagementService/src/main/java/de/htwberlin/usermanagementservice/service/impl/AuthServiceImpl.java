@@ -129,7 +129,6 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public RequestResponse updateUser(String token, User user) {
         String usernameFromToken = jwtUtils.extractUsername(token);
-        System.out.println(usernameFromToken);
         User userDb = ourUserRepo.findByEmail(usernameFromToken).orElseThrow();
         user.setId(userDb.getId());
 
@@ -145,6 +144,18 @@ public class AuthServiceImpl implements AuthService {
         response.setStatusCode(200);
         response.setUser(user);
         return new RequestResponse();
+    }
+
+    @Override
+    public RequestResponse fetchUser(String token) {
+        String usernameFromToken = jwtUtils.extractUsername(token);
+        User userDb = ourUserRepo.findByEmail(usernameFromToken).orElseThrow();
+        RequestResponse response = new RequestResponse();
+        response.setStatusCode(200);
+        response.setUser(userDb);
+        return response;
+
+
     }
 
 

@@ -48,4 +48,12 @@ public interface AuthService {
       * @return
       */
      public RequestResponse updateUser(String token, User user );
+
+
+     /**
+      * Method to get an user based on his token
+      * @param token
+      * @return
+      */
+     public RequestResponse fetchUser(String token);
 }

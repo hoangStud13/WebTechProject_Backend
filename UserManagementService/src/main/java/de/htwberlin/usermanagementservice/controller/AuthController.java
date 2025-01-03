@@ -96,7 +96,7 @@ public class AuthController {
             description = "HTTP Status OK",
             content = @Content(mediaType = "application/json")
     )
-    @PutMapping("/user")
+    @PutMapping("/users")
     public ResponseEntity<RequestResponse> updateUser(@RequestBody RequestResponse checkAuthRequest) {
 
         RequestResponse requestResponse = new RequestResponse();
@@ -105,5 +105,22 @@ public class AuthController {
         user.setRole(checkAuthRequest.getRole());
         requestResponse.setUser(authService.updateUser(checkAuthRequest.getToken(),user).getUser());
         return  ResponseEntity.ok(requestResponse);
+    }
+
+
+    @Operation(
+            summary = "FETCH User Authentication REST API",
+            description = "REST API to get an  user"
+    )
+    @ApiResponse(
+            responseCode = "200",
+            description = "HTTP Status OK",
+            content = @Content(mediaType = "application/json")
+    )
+    @GetMapping("/users")
+    public ResponseEntity<RequestResponse> fetchUser(@RequestHeader("Authorization") String token) {
+        String extractedToken = token.startsWith("Bearer ") ? token.substring(7) : token;
+        RequestResponse response = authService.fetchUser(extractedToken);
+        return ResponseEntity.ok(response);
     }
 }
