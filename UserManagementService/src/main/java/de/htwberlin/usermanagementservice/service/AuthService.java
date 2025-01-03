@@ -1,6 +1,7 @@
 package de.htwberlin.usermanagementservice.service;
 
 import de.htwberlin.usermanagementservice.dto.RequestResponse;
+import de.htwberlin.usermanagementservice.entity.User;
 
 /**
  * Service Interface for authentication operations such as registration, login, and token refresh.
@@ -34,5 +35,17 @@ public interface AuthService {
       */
      RequestResponse refreshToken(RequestResponse refreshRequestResponse);
 
+     /**
+      * Method to check whether a token is valid or not
+      * @param token
+      * @return
+      */
+     boolean checkAuth(String token);
 
+     /**
+      * Method to update an user based on his token
+      * @param token
+      * @return
+      */
+     public RequestResponse updateUser(String token, User user );
 }

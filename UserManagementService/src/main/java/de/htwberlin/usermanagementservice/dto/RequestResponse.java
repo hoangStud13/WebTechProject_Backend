@@ -25,4 +25,5 @@ public class RequestResponse {
     private String password;
     private User user;
     private List<Ticket> tickets;
+    private boolean isTokenValid;
 }

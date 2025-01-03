@@ -1,6 +1,7 @@
 package de.htwberlin.usermanagementservice.controller;
 
 import de.htwberlin.usermanagementservice.dto.RequestResponse;
+import de.htwberlin.usermanagementservice.entity.User;
 import de.htwberlin.usermanagementservice.service.AuthService;
 import de.htwberlin.usermanagementservice.service.impl.AuthServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
@@ -9,10 +10,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/auth")
@@ -69,5 +67,43 @@ public class AuthController {
     @PostMapping("/refresh")
     public ResponseEntity<RequestResponse> refresh(@RequestBody RequestResponse refreshRequest) {
         return ResponseEntity.ok(authService.refreshToken(refreshRequest));
+    }
+
+
+    @Operation(
+            summary = "Check User Authentication REST API",
+            description = "REST API to check if the user is authenticated by validating the JWT"
+    )
+    @ApiResponse(
+            responseCode = "200",
+            description = "HTTP Status OK",
+            content = @Content(mediaType = "application/json")
+    )
+    @PostMapping("/check-auth")
+    public ResponseEntity<RequestResponse> checkAuth(@RequestBody RequestResponse checkAuthRequest) {
+
+        RequestResponse requestResponse = new RequestResponse();
+        requestResponse.setTokenValid(authService.checkAuth(checkAuthRequest.getToken()));
+        return  ResponseEntity.ok(requestResponse);
+    }
+
+    @Operation(
+            summary = "Update User Authentication REST API",
+            description = "REST API to update an existing user"
+    )
+    @ApiResponse(
+            responseCode = "200",
+            description = "HTTP Status OK",
+            content = @Content(mediaType = "application/json")
+    )
+    @PutMapping("/user")
+    public ResponseEntity<RequestResponse> updateUser(@RequestBody RequestResponse checkAuthRequest) {
+
+        RequestResponse requestResponse = new RequestResponse();
+
+        User user = checkAuthRequest.getUser();
+        user.setRole(checkAuthRequest.getRole());
+        requestResponse.setUser(authService.updateUser(checkAuthRequest.getToken(),user).getUser());
+        return  ResponseEntity.ok(requestResponse);
     }
 }

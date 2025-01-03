@@ -4,7 +4,7 @@ FROM maven:3.9.9-eclipse-temurin-21-alpine AS build
 WORKDIR /app
 
 # Kopiere die Projektdateien
-COPY . .
+COPY ../FlightsService .
 
 # Baue das Projekt
 RUN mvn clean package

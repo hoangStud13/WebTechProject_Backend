@@ -5,39 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07669e14-6f7a-45b0-a470-39d1df4ad001" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/FlightsService/src/main/resources/application-dev.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlightsService/src/main/resources/application-prod.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FlightsService/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PopularFlightService/src/main/resources/application-dev.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PopularFlightService/src/main/resources/application-prod.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PopularFlightService/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/impl/AuthServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/impl/TicketServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlightsService/Dockerfile-FlightsService" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlightsService/src/main/java/de/htwberlin/flightsservice/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/FlightsService/src/main/java/de/htwberlin/flightsservice/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlightsService/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PopularFlightService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/PopularFlightService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PopularFlightService/src/main/java/com/htwberlin/popularflightservice.7z" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PopularFlightService/src/main/java/com/htwberlin/popularflightservice/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/PopularFlightService/src/main/java/com/htwberlin/popularflightservice/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PopularFlightService/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlightsService/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/Dockerfile-UserManagementService" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FlightsService/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FlightsService/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PopularFlightService/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/PopularFlightService/src/main/resources/application-dev.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserManagementService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/config/JWTAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/config/JWTAuthFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/controller/TicketController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/controller/TicketController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/dto/RequestResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/dto/RequestResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/entity/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/entity/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/repository/TicketRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/repository/TicketRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/AuthService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/JWTUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/JWTUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/TicketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/resources/application-prod.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/impl/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/impl/TicketServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/impl/TicketServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/resources/application-dev.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,10 +29,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -75,11 +57,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "Spring Boot.PopularFlightServiceApplication.executor": "Run",
+    "Spring Boot.UserManagementServiceApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/zonin/WebTechProject_Backend/FlightsService/src/main/resources",
+    "last_opened_file_path": "C:/Users/zonin/WebTechProject_Backend/FlightsService",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -88,7 +71,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "project.scopes",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -97,6 +80,12 @@
       <recent name="C:\Users\zonin\WebTechProject_Backend\FlightsService\src\main\resources" />
       <recent name="C:\Users\zonin\WebTechProject_Backend\PopularFlightService\src\main\resources" />
       <recent name="C:\Users\zonin\Downloads\WebTechProject_Backend" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zonin\WebTechProject_Backend\UserManagementService" />
+      <recent name="C:\Users\zonin\WebTechProject_Backend" />
+      <recent name="C:\Users\zonin\WebTechProject_Backend\FlightsService" />
+      <recent name="C:\Users\zonin\WebTechProject_Backend\docker-images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -109,20 +98,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PopularFlightServiceApplication">
-    <configuration name="AccountServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="SPRING_BOOT_MAIN_CLASS" value="de.htwberlin.accountservice.AccountServiceApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ArmanAirlinesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="de.htwberlin.armanairlines.ArmanAirlinesApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.UserManagementServiceApplication">
     <configuration name="FlightsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <envs>
         <env name="DB_PASSWORD_PROD" value="HoangDevid1303#" />
@@ -162,8 +138,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Spring Boot.AccountServiceApplication" />
-      <item itemvalue="Spring Boot.ArmanAirlinesApplication" />
       <item itemvalue="Spring Boot.FlightsServiceApplication" />
       <item itemvalue="Spring Boot.PopularFlightServiceApplication" />
       <item itemvalue="Spring Boot.UserManagementServiceApplication" />
@@ -191,6 +165,7 @@
       <workItem from="1734728507995" duration="200000" />
       <workItem from="1735556149235" duration="771000" />
       <workItem from="1735558007236" duration="3910000" />
+      <workItem from="1735646524011" duration="4508000" />
     </task>
     <servers />
   </component>
