@@ -49,4 +49,5 @@ public class Ticket {
     // Nur user_id statt User-Referenz
     @Column(name = "user_id", nullable = false)
     private Integer userId; // Der Fremdschlüssel für den User
+
 }

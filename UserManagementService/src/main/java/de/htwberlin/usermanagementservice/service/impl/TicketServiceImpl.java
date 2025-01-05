@@ -46,6 +46,7 @@ public class TicketServiceImpl implements TicketService {
             // Alle Tickets mit der UserId des gefundenen Benutzers versehen
             for (Ticket ticket : tickets) {
                 ticket.setUserId(user.get().getId()); // Setzt den User für jedes Ticket
+                ticket.setName(user.get().getLastName()+","+user.get().getFirstName());
             }
             // Speichert alle Tickets in der Datenbank
             return ticketRepository.saveAll(tickets);

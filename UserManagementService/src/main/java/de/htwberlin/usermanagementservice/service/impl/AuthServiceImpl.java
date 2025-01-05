@@ -10,6 +10,7 @@ import de.htwberlin.usermanagementservice.service.JWTUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -54,7 +55,6 @@ public class AuthServiceImpl implements AuthService {
                 }
                 ticketRepository.saveAll(tickets);
             }
-            // Wenn Tickets vorhanden sind, setze jedes Ticket dem User zu
 
             if (userResult != null && userResult.getId()>0) {
                 newRequestResponse.setUser(userResult);
@@ -111,5 +111,52 @@ public class AuthServiceImpl implements AuthService {
         response.setStatusCode(500);
         return response;
     }
+
+    @Override
+    public boolean checkAuth(String token ) {
+        String usernameFromToken = jwtUtils.extractUsername(token);
+
+        User user = new User();
+        user.setEmail(usernameFromToken);
+
+        if (jwtUtils.isTokenValid(token, user)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public RequestResponse updateUser(String token, User user) {
+        String usernameFromToken = jwtUtils.extractUsername(token);
+        User userDb = ourUserRepo.findByEmail(usernameFromToken).orElseThrow();
+        user.setId(userDb.getId());
+
+
+
+        if (userDb.getPassword()!=user.getPassword()) {
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+        }
+
+        ourUserRepo.save(user);
+
+        RequestResponse response = new RequestResponse();
+        response.setStatusCode(200);
+        response.setUser(user);
+        return new RequestResponse();
+    }
+
+    @Override
+    public RequestResponse fetchUser(String token) {
+        String usernameFromToken = jwtUtils.extractUsername(token);
+        User userDb = ourUserRepo.findByEmail(usernameFromToken).orElseThrow();
+        RequestResponse response = new RequestResponse();
+        response.setStatusCode(200);
+        response.setUser(userDb);
+        return response;
+
+
+    }
+
 
 }
