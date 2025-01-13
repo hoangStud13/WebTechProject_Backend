@@ -1,0 +1,10 @@
+spring:
+    application:
+      name: "armanAirlines"
+    config:
+      activate:
+        on-profile: "prod"
+    datasource:
+      url: "${JDBC_DB_URL}"
+      username: "${JDBC_DB_USER}"
+      password: "${JDBC_DB_PASSWORD}"
