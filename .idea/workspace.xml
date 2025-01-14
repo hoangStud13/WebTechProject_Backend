@@ -5,82 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="07669e14-6f7a-45b0-a470-39d1df4ad001" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/FlightsService/src/main/resources/schema.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PopularFlightService/Dockerfile-PopularFlightService" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UserManagementService/src/test/java/de/htwberlin/usermanagementservice/controller/AuthControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/md-images/architecture.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FlightsService/src/test/java/de/htwberlin/flightsservice/controller/AirportsControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/HELP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/classes/de/htwberlin/accountservice/AccountServiceApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/classes/de/htwberlin/accountservice/config/WebConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/classes/de/htwberlin/accountservice/constants/AccountConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/classes/de/htwberlin/accountservice/controller/AccountController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/classes/de/htwberlin/accountservice/dto/AccountDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/classes/de/htwberlin/accountservice/dto/ErrorResponseDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/classes/de/htwberlin/accountservice/dto/ResponseDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/classes/de/htwberlin/accountservice/entities/Account.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/classes/de/htwberlin/accountservice/exception/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/classes/de/htwberlin/accountservice/exception/ResourceNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/classes/de/htwberlin/accountservice/mapper/AccountMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/classes/de/htwberlin/accountservice/repository/AccountRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/classes/de/htwberlin/accountservice/service/IAccountService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/classes/de/htwberlin/accountservice/service/impl/AccountServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AccountService/target/test-classes/de/htwberlin/accountservice/AccountServiceApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlightsService/Dockerfile-FlightsService" beforeDir="false" afterPath="$PROJECT_DIR$/FlightsService/Dockerfile-FlightsService" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlightsService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FlightsService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlightsService/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FlightsService/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FlightsService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/FlightsService/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PopularFlightService/src/main/resources/schema2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/PopularFlightService/src/main/resources/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/src/main/resources/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/application.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/application_prod.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/application_test.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/de/htwberlin/armanairlines/ArmanAirlinesApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/de/htwberlin/armanairlines/config/WebConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/de/htwberlin/armanairlines/constants/TicketConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/de/htwberlin/armanairlines/controller/TicketController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/de/htwberlin/armanairlines/dto/ErrorResponseDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/de/htwberlin/armanairlines/dto/ResponseDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/de/htwberlin/armanairlines/dto/TicketDto.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/de/htwberlin/armanairlines/entities/Ticket.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/de/htwberlin/armanairlines/exception/GlobalExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/de/htwberlin/armanairlines/exception/ResourceNotFoundException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/de/htwberlin/armanairlines/mapper/TicketMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/de/htwberlin/armanairlines/repository/TicketRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/de/htwberlin/armanairlines/service/ITicketService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/de/htwberlin/armanairlines/service/impl/TicketServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/classes/schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TicketService/target/test-classes/de/htwberlin/armanairlines/ArmanAirlinesApplicationTests.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/Dockerfile-UserManagementService" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/Dockerfile-UserManagementService" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/impl/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/impl/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/resources/application-dev.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -106,6 +44,9 @@
     "Docker.docker-compose.yml.dbservice: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml.usermanagementservice: Compose Deployment.executor": "Run",
     "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "JUnit.AirportsControllerTest.executor": "Run",
+    "JUnit.AirportsControllerTest.findAirportsByMunicipalityError.executor": "Run",
+    "JUnit.AuthControllerTest.executor": "Run",
     "Maven.UserManagementService [install].executor": "Run",
     "Maven.WebTechProject_Backend [clean].executor": "Run",
     "Maven.WebTechProject_Backend [install].executor": "Run",
@@ -161,7 +102,53 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.PopularFlightServiceApplication">
+  <component name="RunManager" selected="JUnit.AirportsControllerTest">
+    <configuration name="AirportsControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FlightsService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.htwberlin.flightsservice.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.htwberlin.flightsservice.controller" />
+      <option name="MAIN_CLASS_NAME" value="de.htwberlin.flightsservice.controller.AirportsControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AirportsControllerTest.findAirportsByMunicipalityError" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="FlightsService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.htwberlin.flightsservice.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.htwberlin.flightsservice.controller" />
+      <option name="MAIN_CLASS_NAME" value="de.htwberlin.flightsservice.controller.AirportsControllerTest" />
+      <option name="METHOD_NAME" value="findAirportsByMunicipalityError" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="UserManagementService" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.htwberlin.usermanagementservice.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.htwberlin.usermanagementservice.controller" />
+      <option name="MAIN_CLASS_NAME" value="de.htwberlin.usermanagementservice.controller.AuthControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FlightsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <envs>
         <env name="DB_PASSWORD" value="TestPassword" />
@@ -234,19 +221,6 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.autocompleteservice: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="autocompleteservice" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <configuration name="docker-compose.yml.dbservice: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -260,34 +234,23 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml.usermanagementservice: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="usermanagementservice" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Docker.docker-compose.yml.autocompleteservice: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml.dbservice: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.usermanagementservice: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="JUnit.AirportsControllerTest" />
+      <item itemvalue="JUnit.AirportsControllerTest.findAirportsByMunicipalityError" />
+      <item itemvalue="JUnit.AuthControllerTest" />
       <item itemvalue="Spring Boot.FlightsServiceApplication" />
       <item itemvalue="Spring Boot.PopularFlightServiceApplication" />
       <item itemvalue="Spring Boot.UserManagementServiceApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AirportsControllerTest" />
+        <item itemvalue="JUnit.AuthControllerTest" />
+        <item itemvalue="JUnit.AirportsControllerTest.findAirportsByMunicipalityError" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.dbservice: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.autocompleteservice: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml.usermanagementservice: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -327,7 +290,7 @@
       <workItem from="1736795226296" duration="3161000" />
       <workItem from="1736800808088" duration="7594000" />
       <workItem from="1736881219372" duration="124000" />
-      <workItem from="1736881369636" duration="7151000" />
+      <workItem from="1736881369636" duration="10097000" />
     </task>
     <servers />
   </component>
