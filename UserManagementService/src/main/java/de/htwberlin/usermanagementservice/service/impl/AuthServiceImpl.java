@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class AuthServiceImpl implements AuthService {
@@ -75,6 +76,8 @@ public class AuthServiceImpl implements AuthService {
         RequestResponse newRequestResponse = new RequestResponse();
 
         try{
+            System.out.println(signInRequestResponse.getEmail());
+            System.out.println(signInRequestResponse.getPassword());
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(signInRequestResponse.getEmail(), signInRequestResponse.getPassword()));
             var user = ourUserRepo.findByEmail(signInRequestResponse.getEmail()).orElseThrow();
             System.out.println("User ist: "+user);
@@ -131,11 +134,16 @@ public class AuthServiceImpl implements AuthService {
         String usernameFromToken = jwtUtils.extractUsername(token);
         User userDb = ourUserRepo.findByEmail(usernameFromToken).orElseThrow();
         user.setId(userDb.getId());
+        user.setRole("USER");
 
 
+        if (user.getPassword()==null) {
+            System.out.println(user.getPassword());
+            user.setPassword(userDb.getPassword());
+            System.out.println(userDb.getPassword());
+            System.out.println(user.getPassword());
 
-        if (userDb.getPassword()!=user.getPassword()) {
-            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            user.setEmail(userDb.getEmail());
         }
 
         ourUserRepo.save(user);

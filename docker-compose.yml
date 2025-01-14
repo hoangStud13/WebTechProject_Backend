@@ -1,7 +1,7 @@
 services:
-  dbticketservice:
-    image: "randomnoob13/dbservice:v1"
-    container_name: dbticketservice
+  dbservice:
+    image: "mysql:latest"
+    container_name: dbservice
     ports:
       - "3306:3306"
     deploy:
@@ -9,7 +9,7 @@ services:
         limits:
           memory: 700m
     networks:
-      - "armanair"
+      - "backend-network"
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 30s
@@ -17,11 +17,14 @@ services:
       retries: 3
       start_period: 30s
     volumes:
-      - db_ticket_data:/var/lib/mysql
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "TestPassword"
+      MYSQL_DATABASE: "database"
 
-  ticketservice:
-    image: "randomnoob13/ticketservice:v1"
-    container_name: ticketservice
+  usermanagementservice:
+    image: "randomnoob13/usermanagementservice:v1-development-environment"
+    container_name: usermanagementservice
     ports:
       - "8080:8080"
     deploy:
@@ -29,39 +32,35 @@ services:
         limits:
           memory: 700m
     networks:
-      - "armanair"
+      - "backend-network"
     depends_on:
-      dbticketservice:        # Dies sollte dbticketservice sein, nicht dbservice
+      dbservice:
         condition: service_healthy
     environment:
-      SPRING_DATASOURCE_URL: "jdbc:mysql://dbticketservice:3306/webtechproject"  # Auch hier den Namen anpassen
+      SPRING_DATASOURCE_URL: "jdbc:mysql://dbservice:3306/database"
       SPRING_DATASOURCE_USERNAME: "root"
-      SPRING_DATASOURCE_PASSWORD: "RootTestPassword"
+      SPRING_DATASOURCE_PASSWORD: "TestPassword"
 
-  dbflightsservice:
-    image: "randomnoob13/dbflightsservice:v1"
-    container_name: dbflightsservice
+
+  autocompleteservice:
+    image: "randomnoob13/autocomplete:v3"
+    container_name: autocompleteservice
     ports:
-      - "3307:3306"
+      - "8082:8082"
     deploy:
       resources:
         limits:
           memory: 700m
     networks:
-      - "armanair"
-    healthcheck:
-      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 30s
-    volumes:
-      - db_flights_data:/var/lib/mysql
+      - "backend-network"
+
+
+
 
 networks:
-  "armanair":
-    driver: "bridge"
+  backend-network:
+    driver: bridge
 
 volumes:
-  db_ticket_data:    # Separates Volume für Ticket-Datenbank
-  db_flights_data:   # Separates Volume für Flights-Datenbank
+  db_data:
+    driver: local

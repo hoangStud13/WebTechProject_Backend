@@ -1,33 +1,23 @@
 ## BUILD Stage ##
-# Wir nutzen das offizielle Maven-Image mit JDK 21 als Basis für unseren Build
-# Das alpine-Image ist kleiner als jammy, was zu schnelleren Downloads und weniger Speicherverbrauch führt
 FROM maven:3.9.9-eclipse-temurin-21-alpine AS build
 
-# Setzen des Arbeitsverzeichnisses im Container
-# Dies entspricht dem gradle-Verzeichnis im Original, aber folgt Maven-Konventionen
 WORKDIR /app
 
-# Kopieren der Projektdateien in den Container
-# Da wir Maven verwenden, brauchen wir keine speziellen Benutzerrechte wie bei Gradle
-COPY . .
+# Kopieren der Projektdateien
+COPY pom.xml .
+COPY src ./src
 
-# Definition der Build-Argumente für Datenbankzugriff
-# Diese können beim Docker-Build übergeben werden und sind nur während des Builds verfügbar
-ARG DB_PASSWORD
-ARG DB_URL
-ARG DB_USER
-
-# Ausführen des Maven-Builds
-# --no-daemon wird nicht benötigt, da Maven standardmäßig keinen Daemon verwendet
+# Maven Build ohne Datenbank-Konfiguration
 RUN mvn clean package -DskipTests
 
 ## Package Stage ##
-# Verwenden des gleichen Base-Images wie im Gradle-Beispiel für Konsistenz
 FROM eclipse-temurin:21-jdk-jammy
 
-# Kopieren der gebauten JAR-Datei aus dem Build-Stage
-# Ersetzen Sie <EUER PROJEKTNAME> mit Ihrem tatsächlichen Projektnamen
+# Deklaration der Environment Variablen
+ENV SPRING_DATASOURCE_PASSWORD=""
+ENV SPRING_DATASOURCE_URL=""
+ENV SPRING_DATASOURCE_USERNAME=""
+
 COPY --from=build /app/target/UserManagementService-0.0.1-SNAPSHOT.jar app.jar
 
-# Definieren des Startbefehls
 ENTRYPOINT ["java", "-jar", "/app.jar"]

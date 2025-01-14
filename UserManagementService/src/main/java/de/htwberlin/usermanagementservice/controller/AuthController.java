@@ -101,6 +101,7 @@ public class AuthController {
 
         RequestResponse requestResponse = new RequestResponse();
 
+
         User user = checkAuthRequest.getUser();
         user.setRole(checkAuthRequest.getRole());
         requestResponse.setUser(authService.updateUser(checkAuthRequest.getToken(),user).getUser());
