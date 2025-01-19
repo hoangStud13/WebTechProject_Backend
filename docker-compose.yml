@@ -23,7 +23,7 @@ services:
       MYSQL_DATABASE: "database"
 
   usermanagementservice:
-    image: "randomnoob13/usermanagementservice:v1-development-environment"
+    image: "randomnoob13/usermanagementservice:v2-development-environment"
     container_name: usermanagementservice
     ports:
       - "8080:8080"
@@ -40,7 +40,7 @@ services:
       SPRING_DATASOURCE_URL: "jdbc:mysql://dbservice:3306/database"
       SPRING_DATASOURCE_USERNAME: "root"
       SPRING_DATASOURCE_PASSWORD: "TestPassword"
-
+      jwt_secret: "123456789101112131415161718192021222324252627282930313233343536373839404142"
 
   autocompleteservice:
     image: "randomnoob13/autocomplete:v3"

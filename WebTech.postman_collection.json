@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "019e1e6f-1ce1-48ab-86ae-362b577eea48",
+		"name": "WebTech",
+		"description": "This is the postman collection, to test the web applications endpoints.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38351134"
+	},
+	"item": [
+		{
+			"name": "UserManagementService",
+			"item": [
+				{
+					"name": "Ticket Crud",
+					"item": [
+						{
+							"name": "Fetch All Tickets by User",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGdtYWlsLmNvbSIsImlhdCI6MTczNzMxODMxNywiZXhwIjoxNzM3NDA0NzE3fQ.-UbIEUL36e8celNfO-7SVVsnsg7j4JyAxvtXvZo2Kvs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/tickets/user/john@gmail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"tickets",
+										"user",
+										"john@gmail.com"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Ticket for User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGdtYWlsLmNvbSIsImlhdCI6MTczNzMxODMxNywiZXhwIjoxNzM3NDA0NzE3fQ.-UbIEUL36e8celNfO-7SVVsnsg7j4JyAxvtXvZo2Kvs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"tickets\": [\r\n    {\r\n      \"name\": \"Flight 2\",\r\n      \"departure\": \"Berlin\",\r\n      \"destination\": \"New York\",\r\n      \"gate\": \"A1\",\r\n      \"date\": \"2024-12-31\",\r\n      \"seat\": \"12A\",\r\n      \"boardingTime\": \"2024-12-31T14:30:00\"\r\n    },\r\n    {\r\n      \"name\": \"Flight 3\",\r\n      \"departure\": \"Berlin\",\r\n      \"destination\": \"New York\",\r\n      \"gate\": \"A1\",\r\n      \"date\": \"2024-12-31\",\r\n      \"seat\": \"12A\",\r\n      \"boardingTime\": \"2024-12-31T14:30:00\"\r\n    }\r\n  ],\r\n  \"email\": \"john@gmail.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/tickets/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"tickets",
+										"create"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "dung@.com",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Ticket",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGdtYWlsLmNvbSIsImlhdCI6MTczNzMxODMxNywiZXhwIjoxNzM3NDA0NzE3fQ.-UbIEUL36e8celNfO-7SVVsnsg7j4JyAxvtXvZo2Kvs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/tickets/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"tickets",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "This category is for testing ticket-related CRUD operations."
+				},
+				{
+					"name": "Authentication and Authorization",
+					"item": [
+						{
+							"name": "Sign up User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"user\":{\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"email\": \"john@gmail.com\",\r\n  \"password\": \"john@gmail.com\",\r\n  \"city\": \"Berlin\",\r\n  \"country\": \"Germany\",\r\n  \"phoneNumber\": \"1234567890\",\r\n  \"address\": \"Musterstraße 1\",\r\n  \"postalCode\": \"10115\",\r\n  \"gender\": \"Male\",\r\n  \"role\": \"USER\"\r\n  \r\n},\r\n\"tickets\": [\r\n    {\r\n      \"name\": \"Flight 123\",\r\n      \"departure\": \"Berlin\",\r\n      \"destination\": \"New York\",\r\n      \"gate\": \"A1\",\r\n      \"date\": \"2024-12-31\",\r\n      \"seat\": \"12A\",\r\n      \"boardingTime\": \"2024-12-31T14:30:00\"\r\n    }\r\n  ]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/auth/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Sign in User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"john@gmail.com\",\r\n    \"password\":\"john@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/auth/signin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"signin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "is Token valid",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\":\"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGdtYWlsLmNvbSIsImlhdCI6MTczNzMxODMxNywiZXhwIjoxNzM3NDA0NzE3fQ.-UbIEUL36e8celNfO-7SVVsnsg7j4JyAxvtXvZo2Kvs\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/auth/check-auth",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"check-auth"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Fetch User",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huQGdtYWlsLmNvbSIsImlhdCI6MTczNzMxODMxNywiZXhwIjoxNzM3NDA0NzE3fQ.-UbIEUL36e8celNfO-7SVVsnsg7j4JyAxvtXvZo2Kvs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/auth/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"users"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Folder for testing the authorization and authentication capabilities of the UserManagementService Rest API\n\nThe Auth-Controller has the following endpoints:\n\nBase Url: \"/api/v1/auth\"\n\n| **HTTP Method** | **URL** | **Description** |\n| --- | --- | --- |\n| POST | /signin | API to log in as an user |\n| POST | /refresh | Refreshes the token |\n| POST | /check-auth | Validates the token and gives a boolean back |\n| POST | /signup | API to register an user |"
+				}
+			],
+			"description": "This category tests authentication and authorization functionalities of the application."
+		},
+		{
+			"name": "Autocomplete/FlightsService",
+			"item": [
+				{
+					"name": "Get City",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"description": "This folder contains endpoints to test authentication and token management functionalities."
+		}
+	]
+}

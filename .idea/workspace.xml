@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="07669e14-6f7a-45b0-a470-39d1df4ad001" name="Changes" comment="" />
+    <list default="true" id="07669e14-6f7a-45b0-a470-39d1df4ad001" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/JWTUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/java/de/htwberlin/usermanagementservice/service/JWTUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/resources/application-dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/resources/application-dev.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserManagementService/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/UserManagementService/src/main/resources/application-prod.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,46 +41,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.docker-compose.yml.autocompleteservice: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.dbservice: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.usermanagementservice: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AirportsControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AirportsControllerTest.findAirportsByMunicipalityError.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthControllerTest.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.UserManagementService [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WebTechProject_Backend [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.WebTechProject_Backend [install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.FlightsServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.PopularFlightServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.UserManagementServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/hoang/programmierung/webtech/WebTechProject_Backend/FlightsService&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.docker-compose.yml.autocompleteservice: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.dbservice: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.usermanagementservice: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "JUnit.AirportsControllerTest.executor": "Run",
+    "JUnit.AirportsControllerTest.findAirportsByMunicipalityError.executor": "Run",
+    "JUnit.AuthControllerTest.executor": "Run",
+    "Maven.UserManagementService [install].executor": "Run",
+    "Maven.WebTechProject_Backend [clean].executor": "Run",
+    "Maven.WebTechProject_Backend [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.FlightsServiceApplication.executor": "Run",
+    "Spring Boot.PopularFlightServiceApplication.executor": "Run",
+    "Spring Boot.UserManagementServiceApplication.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/hoang/programmierung/webtech/WebTechProject_Backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.configurations.included.in.services": "true",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WebTechProject_Backend\md-images" />
@@ -100,7 +106,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AirportsControllerTest">
+  <component name="RunManager" selected="JUnit.AuthControllerTest">
     <configuration name="AirportsControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="FlightsService" />
       <extension name="coverage">
@@ -186,8 +192,9 @@
     <configuration name="UserManagementServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <envs>
         <env name="DB_PASSWORD" value="TestPassword" />
-        <env name="DB_URL" value="jdbc:mysql://dbservice:3306/database" />
+        <env name="DB_URL" value="jdbc:mysql://localhost:3306/database" />
         <env name="DB_USERNAME" value="root" />
+        <env name="ENCRYPTION_KEY" value="1902480173518075017835871083578019843027582038571807081720847108274102831982319240712084" />
       </envs>
       <module name="UserManagementService" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="de.htwberlin.usermanagementservice.UserManagementServiceApplication" />
@@ -244,8 +251,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AirportsControllerTest" />
         <item itemvalue="JUnit.AuthControllerTest" />
+        <item itemvalue="JUnit.AirportsControllerTest" />
         <item itemvalue="JUnit.AirportsControllerTest.findAirportsByMunicipalityError" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.dbservice: Compose Deployment" />
@@ -290,7 +297,8 @@
       <workItem from="1736881219372" duration="124000" />
       <workItem from="1736881369636" duration="10097000" />
       <workItem from="1737151050650" duration="3093000" />
-      <workItem from="1737234729872" duration="3944000" />
+      <workItem from="1737234729872" duration="4221000" />
+      <workItem from="1737313540929" duration="3475000" />
     </task>
     <servers />
   </component>

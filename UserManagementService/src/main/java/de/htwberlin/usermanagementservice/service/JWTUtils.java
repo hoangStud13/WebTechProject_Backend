@@ -2,6 +2,7 @@ package de.htwberlin.usermanagementservice.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -29,12 +30,10 @@ public class JWTUtils {
      * Constructs a new {@link JWTUtils} instance and initializes the secret key used for signing JWTs.
      * The secret key is derived from a base64-encoded string.
      */
-    public JWTUtils() {
-        String secreteString = "1902480173518075017835871083578019843027582038571807081720847108274102831982319240712084";
-        byte[] keyBytes = Base64.getDecoder().decode(secreteString.getBytes(StandardCharsets.UTF_8));
+    public JWTUtils(@Value("${jwt.secret}") String secretString) {
+        byte[] keyBytes = Base64.getDecoder().decode(secretString.getBytes(StandardCharsets.UTF_8));
         this.secretKey = new SecretKeySpec(keyBytes, "HmacSHA256");
     }
-
     /**
      * Generates a JWT for the provided user details.
      *
