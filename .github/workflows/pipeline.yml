@@ -1,20 +1,23 @@
 name: CI for Spring Boot
-
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
       - name: Set up JDK 21
         uses: actions/setup-java@v2
         with:
-          distribution: 'temurin'  # Ändere die Distribution zu 'temurin'
+          distribution: 'temurin'
           java-version: '21'
+      
       - name: Run Tests
-        run: mvn test
+        run: |
+          cd UserManagementService && mvn test
+          cd ../FlightsService && mvn test
+          cd ../WebTechProject_Backend && mvn test -pl !PopularFlightService
